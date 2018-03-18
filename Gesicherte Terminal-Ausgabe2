@@ -1,0 +1,271 @@
+Last login: Sun Mar 18 18:18:57 on ttys000
+Marlenes-MBP:~ marleneweiss$ cd /Users/marleneweiss/Desktop/wl2
+Marlenes-MBP:wl2 marleneweiss$ /Users/marleneweiss/Desktop/wl2 dir
+-bash: /Users/marleneweiss/Desktop/wl2: is a directory
+Marlenes-MBP:wl2 marleneweiss$ 
+Marlenes-MBP:wl2 marleneweiss$ cd .\wl2
+-bash: cd: .wl2: No such file or directory
+Marlenes-MBP:wl2 marleneweiss$ cd .\wl
+-bash: cd: .wl: No such file or directory
+Marlenes-MBP:wl2 marleneweiss$ cd /Users/marleneweiss/Desktop/wl2/wl
+Marlenes-MBP:wl marleneweiss$ dir
+-bash: dir: command not found
+Marlenes-MBP:wl marleneweiss$ /Users/marleneweiss/Desktop/wl2/wl dir
+-bash: /Users/marleneweiss/Desktop/wl2/wl: is a directory
+Marlenes-MBP:wl marleneweiss$ git init
+Initialized empty Git repository in /Users/marleneweiss/Desktop/wl2/wl/.git/
+Marlenes-MBP:wl marleneweiss$ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+Marlenes-MBP:wl marleneweiss$ git commit -n "H1 dazu"
+error: pathspec 'H1 dazu' did not match any file(s) known to git.
+Marlenes-MBP:wl marleneweiss$ git add blub
+fatal: pathspec 'blub' did not match any files
+Marlenes-MBP:wl marleneweiss$ git add "blub"
+fatal: pathspec 'blub' did not match any files
+Marlenes-MBP:wl marleneweiss$ git add "blub.html"
+fatal: pathspec 'blub.html' did not match any files
+Marlenes-MBP:wl marleneweiss$ git add blub.html
+fatal: pathspec 'blub.html' did not match any files
+Marlenes-MBP:wl marleneweiss$ git add blub
+fatal: pathspec 'blub' did not match any files
+Marlenes-MBP:wl marleneweiss$ git add blut.html
+fatal: pathspec 'blut.html' did not match any files
+Marlenes-MBP:wl marleneweiss$ git add blub.html
+Marlenes-MBP:wl marleneweiss$ git commit -m "h1 dazu"
+[master (root-commit) fd7d04e] h1 dazu
+ 1 file changed, 1 insertion(+)
+ create mode 100644 blub.html
+Marlenes-MBP:wl marleneweiss$ git log
+commit fd7d04e4cb95517cdec14a945cd3dc35bef2ba3a (HEAD -> master)
+Author: marlene weiss <marlene.weiss@stud.uibk.ac.at>
+Date:   Sun Mar 18 19:26:23 2018 +0100
+
+    h1 dazu
+Marlenes-MBP:wl marleneweiss$ git diff
+diff --git a/blub.html b/blub.html
+index bb70c32..8956f94 100644
+--- a/blub.html
++++ b/blub.html
+@@ -1 +1,2 @@
+ <h1>Blub</h>
++    <h2>the sound of fish</h2>
+Marlenes-MBP:wl marleneweiss$ git commit -m "h2 dazu"
+On branch master
+Changes not staged for commit:
+	modified:   blub.html
+
+no changes added to commit
+Marlenes-MBP:wl marleneweiss$ get diff
+-bash: get: command not found
+Marlenes-MBP:wl marleneweiss$ get diff
+-bash: get: command not found
+Marlenes-MBP:wl marleneweiss$ git diff
+diff --git a/blub.html b/blub.html
+index bb70c32..9f8115e 100644
+--- a/blub.html
++++ b/blub.html
+@@ -1 +1,5 @@
+ <h1>Blub</h>
++    <h2>the sound of fish</h2>
++    <img src="fisch.jpg" alt="Fische im Wasser"/>
++
++
+Marlenes-MBP:wl marleneweiss$ git commit -m "fischfoto dazu"
+On branch master
+Changes not staged for commit:
+	modified:   blub.html
+
+Untracked files:
+	fisch.jpg
+
+no changes added to commit
+Marlenes-MBP:wl marleneweiss$ git remote add origin https://github.com/Leni2018/wl.git
+Marlenes-MBP:wl marleneweiss$ git push -u origin master
+Username for 'https://github.com': Leni2018  
+Password for 'https://Leni2018@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/Leni2018/wl.git/'
+Marlenes-MBP:wl marleneweiss$ git push -u origin master
+Username for 'https://github.com': Leni2018
+Password for 'https://Leni2018@github.com': 
+remote: Repository not found.
+fatal: repository 'https://github.com/Leni2018/wl.git/' not found
+Marlenes-MBP:wl marleneweiss$ git push -u origin master
+Username for 'https://github.com': Leni2018
+Password for 'https://Leni2018@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/Leni2018/wl.git/'
+Marlenes-MBP:wl marleneweiss$ git remote -v
+origin	https://github.com/Leni2018/wl.git (fetch)
+origin	https://github.com/Leni2018/wl.git (push)
+Marlenes-MBP:wl marleneweiss$ git log
+commit fd7d04e4cb95517cdec14a945cd3dc35bef2ba3a (HEAD -> master)
+Author: marlene weiss <marlene.weiss@stud.uibk.ac.at>
+Date:   Sun Mar 18 19:26:23 2018 +0100
+
+    h1 dazu
+Marlenes-MBP:wl marleneweiss$ git diff
+diff --git a/blub.html b/blub.html
+index bb70c32..9f8115e 100644
+--- a/blub.html
++++ b/blub.html
+@@ -1 +1,5 @@
+ <h1>Blub</h>
++    <h2>the sound of fish</h2>
++    <img src="fisch.jpg" alt="Fische im Wasser"/>
++
++
+Marlenes-MBP:wl marleneweiss$ git commit -m "h2 eingefügt"
+On branch master
+Changes not staged for commit:
+	modified:   blub.html
+
+Untracked files:
+	fisch.jpg
+
+no changes added to commit
+Marlenes-MBP:wl marleneweiss$ git add wl
+fatal: pathspec 'wl' did not match any files
+Marlenes-MBP:wl marleneweiss$ git add blub.html
+Marlenes-MBP:wl marleneweiss$ git commit -m "h2 dazu"
+[master be53642] h2 dazu
+ 1 file changed, 4 insertions(+)
+Marlenes-MBP:wl marleneweiss$ git log
+commit be536425b4b4f7e7e4f12159adc1cdefae66f4b8 (HEAD -> master)
+Author: marlene weiss <marlene.weiss@stud.uibk.ac.at>
+Date:   Sun Mar 18 19:48:23 2018 +0100
+
+    h2 dazu
+
+commit fd7d04e4cb95517cdec14a945cd3dc35bef2ba3a
+Author: marlene weiss <marlene.weiss@stud.uibk.ac.at>
+Date:   Sun Mar 18 19:26:23 2018 +0100
+
+    h1 dazu
+Marlenes-MBP:wl marleneweiss$ git commit -m "bild fische dazu"
+On branch master
+Untracked files:
+	fisch.jpg
+
+nothing added to commit but untracked files present
+Marlenes-MBP:wl marleneweiss$ git diff
+Marlenes-MBP:wl marleneweiss$ git add blub.html
+Marlenes-MBP:wl marleneweiss$ git commit -m "bild dazu"
+On branch master
+Untracked files:
+	fisch.jpg
+
+nothing added to commit but untracked files present
+Marlenes-MBP:wl marleneweiss$ git diff blub.html
+diff --git a/blub.html b/blub.html
+index 9f8115e..c5076fe 100644
+--- a/blub.html
++++ b/blub.html
+@@ -1,5 +1,6 @@
+ <h1>Blub</h>
+     <h2>the sound of fish</h2>
+     <img src="fisch.jpg" alt="Fische im Wasser"/>
++    <h3>Und es macht blub!</h3>
+ 
+ 
+Marlenes-MBP:wl marleneweiss$ git commit -m "h3 dazu"
+On branch master
+Changes not staged for commit:
+	modified:   blub.html
+
+Untracked files:
+	fisch.jpg
+
+no changes added to commit
+Marlenes-MBP:wl marleneweiss$ git add blub.html
+Marlenes-MBP:wl marleneweiss$ git commit -m "h3 dazu"
+[master 2dcdda7] h3 dazu
+ 1 file changed, 1 insertion(+)
+Marlenes-MBP:wl marleneweiss$ git log
+commit 2dcdda7b316467b0b99b90b61d6b1cc41f8b42a2 (HEAD -> master)
+Author: marlene weiss <marlene.weiss@stud.uibk.ac.at>
+Date:   Sun Mar 18 19:50:53 2018 +0100
+
+    h3 dazu
+
+commit be536425b4b4f7e7e4f12159adc1cdefae66f4b8
+Author: marlene weiss <marlene.weiss@stud.uibk.ac.at>
+Date:   Sun Mar 18 19:48:23 2018 +0100
+
+    h2 dazu
+
+commit fd7d04e4cb95517cdec14a945cd3dc35bef2ba3a
+Author: marlene weiss <marlene.weiss@stud.uibk.ac.at>
+Date:   Sun Mar 18 19:26:23 2018 +0100
+
+    h1 dazu
+Marlenes-MBP:wl marleneweiss$ git push -u origin master
+Username for 'https://github.com': Leni2018
+Password for 'https://Leni2018@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/Leni2018/wl.git/'
+Marlenes-MBP:wl marleneweiss$ git push -u origin master
+Username for 'https://github.com': Leni2018
+Password for 'https://Leni2018@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/Leni2018/wl.git/'
+Marlenes-MBP:wl marleneweiss$ git push -u origin master
+Username for 'https://github.com': Leni2018
+Password for 'https://Leni2018@github.com': 
+remote: Repository not found.
+fatal: repository 'https://github.com/Leni2018/wl.git/' not found
+Marlenes-MBP:wl marleneweiss$ git remote add origin https://github.com/Leni2018/wl2.git
+fatal: remote origin already exists.
+Marlenes-MBP:wl marleneweiss$ https://github.com/Leni2018/wl2
+-bash: https://github.com/Leni2018/wl2: No such file or directory
+Marlenes-MBP:wl marleneweiss$ git push -u origin master
+Username for 'https://github.com': Leni2018
+Password for 'https://Leni2018@github.com': 
+remote: Repository not found.
+fatal: repository 'https://github.com/Leni2018/wl.git/' not found
+Marlenes-MBP:wl marleneweiss$ git push -u origin master
+Username for 'https://github.com': Leni2018
+Password for 'https://Leni2018@github.com': 
+remote: Repository not found.
+fatal: repository 'https://github.com/Leni2018/wl.git/' not found
+Marlenes-MBP:wl marleneweiss$ git push -u origin master
+Username for 'https://github.com': Leni2018
+Password for 'https://Leni2018@github.com': 
+remote: Repository not found.
+fatal: repository 'https://github.com/Leni2018/wl.git/' not found
+Marlenes-MBP:wl marleneweiss$ git log
+commit 2dcdda7b316467b0b99b90b61d6b1cc41f8b42a2 (HEAD -> master)
+Author: marlene weiss <marlene.weiss@stud.uibk.ac.at>
+Date:   Sun Mar 18 19:50:53 2018 +0100
+
+    h3 dazu
+
+commit be536425b4b4f7e7e4f12159adc1cdefae66f4b8
+Author: marlene weiss <marlene.weiss@stud.uibk.ac.at>
+Date:   Sun Mar 18 19:48:23 2018 +0100
+
+    h2 dazu
+
+commit fd7d04e4cb95517cdec14a945cd3dc35bef2ba3a
+Author: marlene weiss <marlene.weiss@stud.uibk.ac.at>
+Date:   Sun Mar 18 19:26:23 2018 +0100
+
+    h1 dazu
+Marlenes-MBP:wl marleneweiss$ git push -u origin master
+Username for 'https://github.com': Leni2018
+Password for 'https://Leni2018@github.com': 
+remote: Repository not found.
+fatal: repository 'https://github.com/Leni2018/wl.git/' not found
+Marlenes-MBP:wl marleneweiss$ git remote add origin https://github.com/Leni2018/wlzwei.git
+fatal: remote origin already exists.
+Marlenes-MBP:wl marleneweiss$ git remote add origin https://github.com/Leni2018/wlzwei2.git
+fatal: remote origin already exists.
+Marlenes-MBP:wl marleneweiss$ git remote add origin https://github.com/Leni2018/wlzwei.git
+fatal: remote origin already exists.
+Marlenes-MBP:wl marleneweiss$ git push -u origin master
+Username for 'https://github.com': Leni2018
+Password for 'https://Leni2018@github.com': 
+remote: Repository not found.
+fatal: repository 'https://github.com/Leni2018/wl.git/' not found
+Marlenes-MBP:wl marleneweiss$ 
